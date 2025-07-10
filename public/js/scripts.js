@@ -63,3 +63,8 @@ function renderPlaylists() {
 }
 
 document.addEventListener('DOMContentLoaded', renderPlaylists);
+
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("show");
+}
