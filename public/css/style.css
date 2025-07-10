@@ -28,9 +28,6 @@ body {
 nav {
   background: rgba(20, 20, 30, 0.8);
   padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
   margin-bottom: 2rem;
   flex-shrink: 0;
@@ -40,6 +37,8 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -53,36 +52,6 @@ nav ul li a {
 nav ul li a:hover {
   color: var(--cyan-dark);
   text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: var(--cyan);
-  cursor: pointer;
-  user-select: none;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-    gap: 1rem;
-  }
-  nav ul.show {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* Main content */
-main {
-  flex-grow: 1;
 }
 
 /* Hero / Page header styles */
@@ -115,11 +84,31 @@ main {
   box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
   transition: background 0.3s ease, box-shadow 0.3s ease;
   display: inline-block;
+  cursor: pointer;
+  border: none;
 }
 
 .cta-btn:hover {
   background: var(--cyan-dark);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+/* Form styles (for login page) */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
 }
 
 /* Footer */
