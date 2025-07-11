@@ -202,7 +202,6 @@ nav ul li a.active {
     width: 100%;
     max-width: 400px;
     border-radius: 15px;
-    box-shadow: var(--shadow);
 }
 
 /* Courses Grid */
