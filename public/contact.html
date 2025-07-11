@@ -3,34 +3,142 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact | Chamidu ICT</title>
+    <title>Contact - Chamidu Herath ICT</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
-            <h1>Contact Chamidu ICT</h1>
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="https://i.postimg.cc/vmwJGqGb/Transperent-Logo.png" alt="Chamidu Herath ICT Logo" />
+            </a>
+            <nav>
+                <ul id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
-    <main class="container contact-container">
-        <section class="contact-box">
-            <h2>Contact Information</h2>
-            <p><strong>Mobile:</strong> +94 71 234 5678</p>
-            <p><strong>Email:</strong> <a href="mailto:ict@chamidu.me">ict@chamidu.me</a></p>
-            <p class="info-note">We try to respond to all messages. Sometimes replies can take a few days — thank you for your patience!</p>
+    <main>
+        <!-- Contact Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>Contact Chamidu Herath ICT</h1>
+                <p>Reach out with your questions or feedback. I'm here to help!</p>
+            </div>
         </section>
 
-        <section class="contact-box">
-            <h2>Follow Me</h2>
-            <a href="https://www.youtube.com/@chamiduherathict" target="_blank" class="btn">YouTube Channel</a>
+        <!-- Contact Content -->
+        <section class="section">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <h3>Send a Message</h3>
+                        <form action="mailto:ict@chamidu.me" method="post" enctype="text/plain">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" placeholder="Your message or feedback" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p><a href="mailto:ict@chamidu.me">ict@chamidu.me</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+94 71 234 5678</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-youtube"></i>
+                            <p><a href="https://www.youtube.com/@chamiduherathict" target="_blank">YouTube Channel</a></p>
+                        </div>
+                        <p class="info-note">I try to respond to all messages within a few days. Thank you for your patience!</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer>
         <div class="container">
-            <p>&copy; 2025 Chamidu Herath ICT. All rights reserved.</p>
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Chamidu Herath ICT</h3>
+                    <p>Welcome to Chamidu Herath ICT!</p>
+                    <p>රැල්ලක ආරම්භය</p>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@chamiduherathict" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="mailto:ict@chamidu.me">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="about.html">About</a></p>
+                    <p><a href="contact.html">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Classes</h3>
+                    <p>A-Level ICT - 2027 Batch</p>
+                    <p>Every Sunday at 7:00 PM</p>
+                    <p>Grade 6-11 Materials</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Phone: +94 71 234 5678</p>
+                    <p>Email: <a href="mailto:ict@chamidu.me">ict@chamidu.me</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Chamidu Herath ICT. All Rights Reserved.
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
